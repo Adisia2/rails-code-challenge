@@ -23,6 +23,4 @@ test:
 
 production:
   <<: *default
-  database: pizza_hotel
-  username: pizza_hotel_user
-  password: <%= ENV['zcTWtif0z9TX5wnKebGDtv7y9fSrqiL0'] %>
+  url: <%= ENV['DATABASE_URL'] %>

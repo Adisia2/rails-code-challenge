@@ -7,10 +7,10 @@ ruby "2.7.0"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -45,4 +45,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
+group :production do
+      gem 'puma', '~> 6.1', '>= 6.1.1'
+      gem 'pg', '~> 1.4', '>= 1.4.6'
+  end

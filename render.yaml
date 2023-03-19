@@ -5,14 +5,14 @@ databases:
 
 services:
   - type: web
-    name: pizza-hotel
+    name: pizza
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: postgres://pizza_hotel_user:zcTWtif0z9TX5wnKebGDtv7y9fSrqiL0@dpg-cgap8s82qv267udcdcr0-a.oregon-postgres.render.com/pizza_hotel
+      - key: DATABASE_URL
         fromDatabase:
-          name: pizza-hotel
+          name: pizza
           property: connectionString
-      - key: c2d1e80cdfdc0e6472c52cd96865664d
+      - key: RAILS_MASTER_KEY
         sync: false
